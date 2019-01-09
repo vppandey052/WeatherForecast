@@ -118,7 +118,7 @@ public class WeatherForecastDomainManagerImpl implements
 		Instant responseDate = Instant.ofEpochMilli(d.getTime());
 		Instant instant = Instant.now();
 		Instant fourthDayFromtoday = instant.plus(Duration.ofDays(4));
-		return responseDate.isBefore(instant) || responseDate.isAfter(fourthDayFromtoday);
+		return !(responseDate.isBefore(instant) || responseDate.isAfter(fourthDayFromtoday));
 	}
 	
 }
